@@ -10,16 +10,7 @@ public class BallMove : MonoBehaviour
 
     int jumpCount = 0; 
 
-  
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-
-
-    }
-
-    // Update is called once per frame
+ 
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -56,9 +47,11 @@ public class BallMove : MonoBehaviour
         if (collision.gameObject.tag.CompareTo("Land") == 0) {
             jumpCount = 0; 
         }
-        if (collision.gameObject.tag.CompareTo("DeathHeart") == 0) {
-            DataManager.Instance.playerTimeCurrent -= 50f; //시간 50 감소 안함 이거 문제 해결해야함
-        }
+       /*if (collision.gameObject.tag.CompareTo("DeathHeart") == 0) {
+            
+           DataManager.Instance.playerTimeCurrent -= 5f; //시간 50 감소 안함 이거 문제 해결해야함
+       }*/
+        
     }
 
 }

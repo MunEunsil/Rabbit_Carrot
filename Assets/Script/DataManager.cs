@@ -8,16 +8,21 @@ public class DataManager : MonoBehaviour
 {   //게임 플레이 타임 
     public float playerTimeCurrent = 10f;
     public float playImeMax = 10f;
+    public float playlmeMin = 0f;
     //플레이어 사망 판단 
     public bool playerDie = false;
 
+    //내부적으로 맵 번호 설정하기 
+    public int map = 0;
+    public int mapView = 0;
+
 
     static DataManager instance;
-    public static DataManager Instance
- 
+    public static DataManager Instance{
 
-    {
+
         get {
+
             return instance;
         }
     }
@@ -34,6 +39,8 @@ public class DataManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
     }
+
+
 
     //실제 스코어 저장할 곳 
     public int score = 0;
