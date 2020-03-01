@@ -17,6 +17,6 @@ public class Stage2: MonoBehaviour
         
     }
     public void ChangeScene() {
-        SceneManager.LoadScene("Stage2");
+        SceneManager.LoadScene("Stage_2");
     }
 }

@@ -93,7 +93,7 @@ public class GameManage : MonoBehaviour
 
         }
         if (DataManager.Instance.playerDie == true) {
-            //배경끄기
+            //endpenel 띄우기
             EndPanel.SetActive(true);
             
         }
@@ -106,5 +106,9 @@ public class GameManage : MonoBehaviour
         DataManager.Instance.playerTimeCurrent = DataManager.Instance.playImeMax;
 
         SceneManager.LoadScene("Stage_0");
+    }
+    public void GoMapButton()
+    { //맵으로 돌아가는 버튼
+        SceneManager.LoadScene("InGame");
     }
 }

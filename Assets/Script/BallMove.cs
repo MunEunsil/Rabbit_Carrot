@@ -47,10 +47,7 @@ public class BallMove : MonoBehaviour
         if (collision.gameObject.tag.CompareTo("Land") == 0) {
             jumpCount = 0; 
         }
-       /*if (collision.gameObject.tag.CompareTo("DeathHeart") == 0) {
-            
-           DataManager.Instance.playerTimeCurrent -= 5f; //시간 50 감소 안함 이거 문제 해결해야함
-       }*/
+
         
     }
 

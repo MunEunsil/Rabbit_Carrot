@@ -13,6 +13,7 @@ public class DeadZone : MonoBehaviour
                 DataManager.Instance.playerDie = true;  //player랑 충돌하면 playerDie를 true
                 print("player death");
             }
+            
         }
     }
 

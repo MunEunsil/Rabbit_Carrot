@@ -17,6 +17,6 @@ public class LEGENO1: MonoBehaviour
         
     }
     public void ChangeScene() {
-        SceneManager.LoadScene("Map1");
+        SceneManager.LoadScene("Stage_0");
     }
 }
