@@ -10,7 +10,6 @@ public class BallMove : MonoBehaviour
 
     int jumpCount = 0;
 
-    public GameObject BadCarrot;
  
     void Update()
     {
@@ -49,12 +48,6 @@ public class BallMove : MonoBehaviour
             jumpCount = 0; 
         }
 
-        if (collision.gameObject.tag.CompareTo("BadCarrot") == 0)
-        {
-            //당근 받아와서 당근 끄기 시도해보자 
-            BadCarrot.gameObject.SetActive(false); 
-            //실패했다 젠장 뭐가 문제인거냐 
-        }
 
     }
 

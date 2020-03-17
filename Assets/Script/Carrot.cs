@@ -7,6 +7,7 @@ public class Carrot : MonoBehaviour
     //충돌처리 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        print(collision.gameObject.tag);
         if (collision.gameObject.tag.CompareTo("player") == 0) {
             DataManager.Instance.score += 1;
 

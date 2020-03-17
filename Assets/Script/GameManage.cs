@@ -7,8 +7,10 @@ using UnityEngine.SceneManagement;
 public class GameManage : MonoBehaviour
 {
     public Image HeartBar;
+
     public float maxHP =100f;
     public float minHP = 0f;
+
     public GameObject EndPanel;
 
     //맵 배열로 보관 
@@ -24,7 +26,6 @@ public class GameManage : MonoBehaviour
     //맵을 한 단계 올리고 선택하는 함수 
     public void Next_Map() {
         //맵을 올리고 
-
         DataManager.Instance.map += 1;
         DataManager.Instance.mapView += 1;
 
@@ -41,6 +42,7 @@ public class GameManage : MonoBehaviour
         MapStart();
 
     }
+
     //지금 켜야할 맵을 키고 나머지는 끄기 
     public void MapStart() {
         for (int temp = 1; temp <= NextMap.Length; temp++) {
@@ -78,10 +80,10 @@ public class GameManage : MonoBehaviour
 
 
   
-        //시간 끝나면 쥬금 
+        //플레이어가 살아있는동안 
         if (!DataManager.Instance.playerDie) {
-
-            DataManager.Instance.playerTimeCurrent -= 1 * Time.deltaTime; //1초에 1씩 빼기  
+            //시간 줄이기 
+            DataManager.Instance.playerTimeCurrent -= 1 * Time.deltaTime;   
 
             //heartbar 값 빼기 
             HeartBar.fillAmount = DataManager.Instance.playerTimeCurrent / DataManager.Instance.playImeMax;

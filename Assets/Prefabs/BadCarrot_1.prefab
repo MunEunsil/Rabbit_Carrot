@@ -11,13 +11,14 @@ GameObject:
   - component: {fileID: 482432469763170787}
   - component: {fileID: 7139101893598124545}
   - component: {fileID: 7101221193378389625}
+  - component: {fileID: 724037300}
   m_Layer: 0
   m_Name: BadCarrot_1
   m_TagString: BadCarrot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &482432469763170787
 Transform:
   m_ObjectHideFlags: 0
@@ -90,10 +91,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.48469734, y: -0.48473358}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -104,5 +105,19 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 24.802656, y: 35.079998}
+  m_Size: {x: 17.739464, y: 31.617672}
   m_EdgeRadius: 0
+--- !u!114 &724037300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 176403365144695329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88f59eb177bcef046a010017a4e995b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 5
+  xMove: 0
