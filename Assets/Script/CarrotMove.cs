@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
  
-
-
 public class CarrotMove : MonoBehaviour
 {
     public float Speed = 5f; //당근 속도
@@ -13,7 +11,7 @@ public class CarrotMove : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        print("충돌은 인식함? ");
+        print("BadCarrot");
         
         if (collision.gameObject.tag.CompareTo("player") == 0)
         {

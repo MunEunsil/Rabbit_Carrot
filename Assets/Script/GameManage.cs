@@ -12,7 +12,8 @@ public class GameManage : MonoBehaviour
     public float minHP = 0f;
 
     public GameObject EndPanel;
-
+    public GameObject stageClear;
+    public GameObject RedPanel;
     //맵 배열로 보관 
     public GameObject[] NextMap;
 
@@ -92,11 +93,64 @@ public class GameManage : MonoBehaviour
             if (DataManager.Instance.playerTimeCurrent < 0) {
                 DataManager.Instance.playerDie = true;
             }
+            //클리어 하면 죽음으로 표시해서 모두 멈추기 
+            if (DataManager.Instance.stageClear == true)
+            {
+                DataManager.Instance.playerDie = true;
+            }
+            //아이템 효과 
+            if (DataManager.Instance.EatBadHeart == true)
+            {
+                StartCoroutine(BadHeartEffect());
+            }
+
 
         }
+        //코루틴~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        // 종료했음에도 꺼졌다 켜졌다 난리다...! 
+        
+        IEnumerator BadHeartEffect()
+        {
+            print("코루틴 실행");
+            int count = 0;
+          
+            while (count <5)
+            {
+                count += 1;
+
+                RedPanel.SetActive(true);
+                yield return new WaitForSeconds(0.5f);
+                RedPanel.SetActive(false);
+                yield return new WaitForSeconds(0.5f);
+                
+                Debug.Log(count);
+               
+            }
+            RedPanel.SetActive(false);
+            DataManager.Instance.EatBadHeart = false;
+
+           
+            print("하트 코루틴 종료");
+            
+        }
+        //코루틴 끝날 때 DataManager.Instance.EatDHeart = false 하기~
+
+
+        //조건 추가 MapClear가 Fale이면 앤드패널 True이면 clearPanel 
+        //MapClearZone과 충도하면 MapClear True로 바꾸고 playerDie true로 바꾸기 
+
         if (DataManager.Instance.playerDie == true) {
             //endpenel 띄우기
-            EndPanel.SetActive(true);
+            if (DataManager.Instance.stageClear ==false)
+            {
+                EndPanel.SetActive(true);
+
+
+            }
+            else if(DataManager.Instance.stageClear == true) //cle ar panel 띄우기 
+            {
+                stageClear.SetActive(true);
+            }
             
         }
            

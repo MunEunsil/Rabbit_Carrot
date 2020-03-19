@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DHeart : MonoBehaviour
 {
+
+
     //충돌처리 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -12,16 +15,15 @@ public class DHeart : MonoBehaviour
             //시간감소
             DataManager.Instance.playerTimeCurrent -= 10f;
 
-
-            //먹고 바로 죽이려면 
-
-           /* DataManager.Instance.playerDie = true;  //player랑 충돌하면 playerDie를 true
-            print("player death");
-            */
-
-        
             //자신을 화면에서 없애라
             gameObject.SetActive(false);
+            DataManager.Instance.EatBadHeart = true; 
+    
+
         }
     }
+
+    //깜빡깜빡 효과는 이런식으로? 만들것같은데 n초 동안을 만들어 보자 
+
+
 }

@@ -12,6 +12,14 @@ public class DataManager : MonoBehaviour
     //플레이어 사망 판단 
     public bool playerDie = false;
 
+    //스테이지 클리어 판단 
+    public bool stageClear = false;
+
+    //아이템 효과를 위한 bool
+    public bool EatBadHeart = false;
+
+
+
     //내부적으로 맵 번호 설정하기 
     public int map = 0;
     public int mapView = 0;
@@ -29,6 +37,7 @@ public class DataManager : MonoBehaviour
     //? 
     private void Awake()
     {
+   
         if (instance == null)
         {
             DontDestroyOnLoad(gameObject);

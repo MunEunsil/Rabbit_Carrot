@@ -10,7 +10,9 @@ public class BallMove : MonoBehaviour
 
     int jumpCount = 0;
 
- 
+    public GameObject coinAudio;
+    public GameObject jumpAudio;
+
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -26,13 +28,14 @@ public class BallMove : MonoBehaviour
             {
                 gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0, jump2, 0);
                 // y축으로 속도 증가? 
-
+                jumpAudio.GetComponent<AudioSource>().Play();
                 jumpCount++;  //점프횟수 추가. 
 
             }
             else if (jumpCount == 1)
             {
                 gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0, jump2, 0);
+                jumpAudio.GetComponent<AudioSource>().Play();
                 jumpCount++;
 
             }
@@ -49,6 +52,20 @@ public class BallMove : MonoBehaviour
         }
 
 
+    }
+    
+    
+    //당근효과음을 위한것 
+    //뭔가 더러워지기 시작한다 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        print(collision.gameObject.tag);
+        if (collision.gameObject.tag.CompareTo("Carrot") == 0)
+        {
+            coinAudio.GetComponent<AudioSource>().Play();
+
+
+        }
     }
 
 }
