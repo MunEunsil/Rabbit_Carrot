@@ -10,8 +10,8 @@ public class BallMove : MonoBehaviour
 
     int jumpCount = 0;
 
-    public GameObject coinAudio;
-    public GameObject jumpAudio;
+ //   public GameObject coinAudio;
+  //  public GameObject jumpAudio;
 
     void Update()
     {
@@ -57,7 +57,7 @@ public class BallMove : MonoBehaviour
     
     //당근효과음을 위한것 
     //뭔가 더러워지기 시작한다 
-    private void OnTriggerEnter2D(Collider2D collision)
+  /*  private void OnTriggerEnter2D(Collider2D collision)
     {
         print(collision.gameObject.tag);
         if (collision.gameObject.tag.CompareTo("Carrot") == 0)
@@ -67,5 +67,5 @@ public class BallMove : MonoBehaviour
 
         }
     }
-
+    */
 }

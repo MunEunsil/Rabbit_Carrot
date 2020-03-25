@@ -108,7 +108,7 @@ public class GameManage : MonoBehaviour
         }
         //코루틴~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         // 종료했음에도 꺼졌다 켜졌다 난리다...! 
-        
+        // 좀 무섭게 깜빡인다.....! waitForSeconds무시하는것같다...! 또 의문 중첩가능한것인가?
         IEnumerator BadHeartEffect()
         {
             print("코루틴 실행");
@@ -124,7 +124,10 @@ public class GameManage : MonoBehaviour
                 yield return new WaitForSeconds(0.5f);
                 
                 Debug.Log(count);
-               
+
+                if (DataManager.Instance.playerDie == true) {
+                    break;
+                }
             }
             RedPanel.SetActive(false);
             DataManager.Instance.EatBadHeart = false;
@@ -140,11 +143,11 @@ public class GameManage : MonoBehaviour
         //MapClearZone과 충도하면 MapClear True로 바꾸고 playerDie true로 바꾸기 
 
         if (DataManager.Instance.playerDie == true) {
+
             //endpenel 띄우기
             if (DataManager.Instance.stageClear ==false)
             {
                 EndPanel.SetActive(true);
-
 
             }
             else if(DataManager.Instance.stageClear == true) //cle ar panel 띄우기 
@@ -158,8 +161,13 @@ public class GameManage : MonoBehaviour
     }
     public void RestartButton() { //다시시작 버튼 
         DataManager.Instance.score = 0;
+        DataManager.Instance.map = 0;
+        DataManager.Instance.mapView = 0;
         DataManager.Instance.playerDie = false;
         DataManager.Instance.playerTimeCurrent = DataManager.Instance.playImeMax;
+        //소리 어떻게 해결하지?
+
+        
 
         SceneManager.LoadScene("Stage_0");
     }

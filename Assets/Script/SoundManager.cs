@@ -4,15 +4,75 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    static SoundManager instance;
+    public AudioSource[] sources;
+
+    public static SoundManager Instance
     {
-        
+        get
+        {
+            return instance;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
-        
+        if (instance == null)
+        {
+            DontDestroyOnLoad(gameObject);
+            instance = this;
+
+            sources = GetComponentsInChildren<AudioSource>();
+
+        }
+        else
+        {
+            DestroyObject(gameObject);
+        }
     }
+    public void StopSound(string soundName)
+    {
+        for(int i=0; i<sources.Length; i++)
+        {
+            if (sources[i].gameObject.name.CompareTo(soundName) == 0)
+            {
+                sources[i].Stop();
+            }
+        }
+    }
+
+    public void PlaySound(string soundNmae)
+    {
+        for(int i=0; i<sources.Length; i++)
+        {
+            if (sources[i].gameObject.name.CompareTo(soundNmae) == 0)
+            {
+                sources[i].Play();
+            }
+        }
+    }
+    public void StopAllSound()
+    {
+        for(int i=0; i<sources.Length; i++)
+        {
+            sources[i].Stop();
+        }
+    }
+
+    public void soundAllMute()
+    {
+        for (int i = 0; i < sources.Length; i++)
+        {
+            sources[i].mute = true;
+        }
+    }
+
+    public void SoundAllOn() {
+        for (int i = 0; i < sources.Length; i++)
+        {
+            sources[i].mute = false;
+        }
+    }
+
+ 
 }
