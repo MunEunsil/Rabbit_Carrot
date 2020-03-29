@@ -14,7 +14,6 @@ public class SoundManager : MonoBehaviour
             return instance;
         }
     }
-
     private void Awake()
     {
         if (instance == null)
@@ -27,9 +26,12 @@ public class SoundManager : MonoBehaviour
         }
         else
         {
-            DestroyObject(gameObject);
+            Destroy(gameObject);
         }
     }
+    
+
+    
     public void StopSound(string soundName)
     {
         for(int i=0; i<sources.Length; i++)
@@ -41,25 +43,30 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    public void PlaySound(string soundNmae)
+
+    public void PlaySound(string soundName)
     {
-        for(int i=0; i<sources.Length; i++)
+        for (int i = 0; i < sources.Length; i++)
         {
-            if (sources[i].gameObject.name.CompareTo(soundNmae) == 0)
+            if (sources[i].gameObject.name.CompareTo(soundName) == 0)
             {
                 sources[i].Play();
             }
         }
     }
-    public void StopAllSound()
+
+
+    public void StopAllSound(string soundName)
     {
-        for(int i=0; i<sources.Length; i++)
+        for (int i = 0; i < sources.Length; i++)
         {
+            
             sources[i].Stop();
+            
         }
     }
 
-    public void soundAllMute()
+    public void SoundAllMute(string soundName)
     {
         for (int i = 0; i < sources.Length; i++)
         {
@@ -67,12 +74,22 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    public void SoundAllOn() {
+    public void SoundAllOn(string soundName)
+    {
         for (int i = 0; i < sources.Length; i++)
         {
             sources[i].mute = false;
         }
     }
 
- 
+    public void BGSoundSpeedOn()
+    {
+        sources[0].pitch = 1.1f;
+    }
+    
+    public void BGSoundSpeedOff()
+    {
+        sources[0].pitch = 1;
+    }
+
 }

@@ -3416,7 +3416,6 @@ MonoBehaviour:
   jump2: 8
   Speed: 5
   coinAudio: {fileID: 177129250}
-  jumpAudio: {fileID: 1068584085}
 --- !u!1 &584292973
 GameObject:
   m_ObjectHideFlags: 0
@@ -5554,13 +5553,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1095480337}
+  - component: {fileID: 1095480338}
   m_Layer: 0
   m_Name: SoundManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1095480337
 Transform:
   m_ObjectHideFlags: 0
@@ -5578,6 +5578,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1095480338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1095480336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16ab7a62ec23ffa4195fee7403cb3fa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sources:
+  - {fileID: 1738497325}
+  - {fileID: 177129252}
+  - {fileID: 1068584087}
 --- !u!1001 &1107423683
 PrefabInstance:
   m_ObjectHideFlags: 0

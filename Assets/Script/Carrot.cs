@@ -11,8 +11,8 @@ public class Carrot : MonoBehaviour
         print(collision.gameObject.tag);
         if (collision.gameObject.tag.CompareTo("player") == 0) {
             DataManager.Instance.score += 1;
-           // coinAudio.GetComponent<AudioSource>().Play();
-
+            //coinAudio.GetComponent<AudioSource>().Play();
+            SoundManager.Instance.PlaySound("EatCarrot");
             //자신을 화면에서 없애라
             gameObject.SetActive(false);
         }

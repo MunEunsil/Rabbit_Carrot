@@ -96,19 +96,20 @@ public class GameManage : MonoBehaviour
             //클리어 하면 죽음으로 표시해서 모두 멈추기 
             if (DataManager.Instance.stageClear == true)
             {
+                SoundManager.Instance.StopSound("BG");
                 DataManager.Instance.playerDie = true;
             }
             //아이템 효과 
             if (DataManager.Instance.EatBadHeart == true)
             {
+                DataManager.Instance.EatBadHeart = false;
                 StartCoroutine(BadHeartEffect());
             }
 
 
         }
         //코루틴~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        // 종료했음에도 꺼졌다 켜졌다 난리다...! 
-        // 좀 무섭게 깜빡인다.....! waitForSeconds무시하는것같다...! 또 의문 중첩가능한것인가?
+
         IEnumerator BadHeartEffect()
         {
             print("코루틴 실행");
@@ -125,14 +126,15 @@ public class GameManage : MonoBehaviour
                 
                 Debug.Log(count);
 
+
                 if (DataManager.Instance.playerDie == true) {
                     break;
                 }
             }
             RedPanel.SetActive(false);
+
             DataManager.Instance.EatBadHeart = false;
 
-           
             print("하트 코루틴 종료");
             
         }
@@ -165,8 +167,8 @@ public class GameManage : MonoBehaviour
         DataManager.Instance.mapView = 0;
         DataManager.Instance.playerDie = false;
         DataManager.Instance.playerTimeCurrent = DataManager.Instance.playImeMax;
-        //소리 어떻게 해결하지?
-
+        
+        SoundManager.Instance.PlaySound("BG");
         
 
         SceneManager.LoadScene("Stage_0");
