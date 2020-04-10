@@ -19,7 +19,7 @@ public class Load_Zone : MonoBehaviour
                 gamemanage.GetComponent<GameManage>().Next_Map();
 
                 //로드맵 끄기 close 1초 뒤에 실행 
-                Invoke("Close", 1.1f);
+                Invoke("Close", 3.1f);
 
             }
         }

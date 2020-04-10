@@ -9,9 +9,10 @@ public class Tripple_Carrot : MonoBehaviour
     {
         if (collision.gameObject.tag.CompareTo("player") == 0)
         {
-            DataManager.Instance.score += 5; 
+            DataManager.Instance.score += 5;
             //훔...carrot / tripplecarrot하지말고 하나로 만드는게 좋나? 
             //자신을 화면에서 없애라
+            SoundManager.Instance.PlaySound("EatCarrot");
             gameObject.SetActive(false);
         }
     }
