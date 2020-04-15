@@ -17,7 +17,8 @@ public class CarrotMove : MonoBehaviour
         {
 
             gameObject.SetActive(false);
-            DataManager.Instance.score -= 5;
+            DataManager.Instance.playerDie = true;
+            //DataManager.Instance.score -= 5;
 
         }
 
