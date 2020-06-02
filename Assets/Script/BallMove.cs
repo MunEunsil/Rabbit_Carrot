@@ -11,7 +11,9 @@ public class BallMove : MonoBehaviour
     int jumpCount = 0;
 
     public GameObject coinAudio;
-  //  public GameObject jumpAudio;
+    //  public GameObject jumpAudio;
+
+
 
     void Update()
     {

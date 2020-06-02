@@ -19,6 +19,11 @@ public class GameManage : MonoBehaviour
 
     public GameObject LoadMap;
 
+
+    //점수 이미지 
+    public GameObject[] NumberImage;
+    public Sprite[] Number;
+
     public void Load_Map() {
         LoadMap.transform.position = new Vector3(15f, LoadMap.transform.position.y, LoadMap.transform.position.z);
         LoadMap.SetActive(true);
@@ -60,7 +65,9 @@ public class GameManage : MonoBehaviour
                 NextMap[temp - 1].SetActive(false);
             }
         }
-    } 
+    }
+
+
 
     void Start()
     {
@@ -73,16 +80,21 @@ public class GameManage : MonoBehaviour
         //점수 띄우기 
         //100의 단위 
         int temp = DataManager.Instance.score / 100;
-        //점수판 이미지가 없으니 받으면 이부분 하기 
+        NumberImage[0].GetComponent<Image>().sprite = Number[temp];
         //10의 단위 0~99까지 계산 
         int temp2 = DataManager.Instance.score % 100;
         //이걸 다시 0~9까지 
+        temp2 = temp2 / 10;
+        NumberImage[1].GetComponent<Image>().sprite = Number[temp2];
+        //1의 단위 
         int temp3 = DataManager.Instance.score % 10;
-
-
+        NumberImage[2].GetComponent<Image>().sprite = Number[temp3];
+            
   
         //플레이어가 살아있는동안 
         if (!DataManager.Instance.playerDie) {
+            DataManager.Instance.Rabbit_animator.SetBool("Rabbit_Run_State",true);
+
             //시간 줄이기 
             DataManager.Instance.playerTimeCurrent -= 1 * Time.deltaTime;   
 
@@ -92,6 +104,7 @@ public class GameManage : MonoBehaviour
             //시간 다 되면 죽음 
             if (DataManager.Instance.playerTimeCurrent < 0) {
                 DataManager.Instance.playerDie = true;
+
             }
             //클리어 하면 죽음으로 표시해서 모두 멈추기 
             if (DataManager.Instance.stageClear == true)
@@ -145,7 +158,9 @@ public class GameManage : MonoBehaviour
         //MapClearZone과 충도하면 MapClear True로 바꾸고 playerDie true로 바꾸기 
 
         if (DataManager.Instance.playerDie == true) {
-
+     
+            //게임오버or게임클리어 => 애니메이션 멈춤
+            DataManager.Instance.Rabbit_animator.SetBool("Rabbit_Run_State", false);
             //endpenel 띄우기
             if (DataManager.Instance.stageClear ==false)
             {
@@ -158,7 +173,6 @@ public class GameManage : MonoBehaviour
             }
             
         }
-           
 
     }
     public void RestartButton() { //다시시작 버튼 
@@ -167,11 +181,13 @@ public class GameManage : MonoBehaviour
         DataManager.Instance.mapView = 0;
         DataManager.Instance.playerDie = false;
         DataManager.Instance.playerTimeCurrent = DataManager.Instance.playImeMax;
-        
+
+        //DataManager.Instance.Rabbit_animator = GetComponent<Animator>();
+
         SoundManager.Instance.PlaySound("BG");
         
 
-        SceneManager.LoadScene("Stage_0");
+        SceneManager.LoadScene("Stage_2");
     }
     public void GoMapButton()
     { //맵으로 돌아가는 버튼

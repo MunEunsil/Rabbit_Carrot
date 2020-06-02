@@ -1765,94 +1765,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98e2f9cb87022364fbe7143e8e89c84e, type: 3}
---- !u!1 &342874870 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6201071579140806127, guid: 9b41e89346a4c064a8db183e71025e65,
-    type: 3}
-  m_PrefabInstance: {fileID: 5025685314814538335}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &342874871
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 342874870}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3551c2fd372751744970ce92dec7680f, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &342874874
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 342874870}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 254d1e52e2b67ed4290a20eb823afdb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jump: 5
-  jump2: 8
-  Speed: 5
-  coinAudio: {fileID: 177129250}
---- !u!50 &342874876
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 342874870}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
---- !u!61 &342874877
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 342874870}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.835516, y: -6.5646772}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 24.802656, y: 35.079998}
-    newSize: {x: 24.802656, y: 35.079998}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 10.718466, y: 17.653782}
-  m_EdgeRadius: 0
 --- !u!4 &366337654 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2690533397904049300, guid: 238598267e571f54390d707d91e53dfa,
@@ -9785,16 +9697,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rabbit
       objectReference: {fileID: 0}
-    - target: {fileID: 6201071579140806127, guid: 9b41e89346a4c064a8db183e71025e65,
-        type: 3}
-      propertyPath: m_TagString
-      value: player
-      objectReference: {fileID: 0}
-    - target: {fileID: 6201071579140806127, guid: 9b41e89346a4c064a8db183e71025e65,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7082119972967842277, guid: 9b41e89346a4c064a8db183e71025e65,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9850,26 +9752,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7082119972967842277, guid: 9b41e89346a4c064a8db183e71025e65,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.13
-      objectReference: {fileID: 0}
-    - target: {fileID: 7082119972967842277, guid: 9b41e89346a4c064a8db183e71025e65,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.13
-      objectReference: {fileID: 0}
-    - target: {fileID: 2185033813321525413, guid: 9b41e89346a4c064a8db183e71025e65,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2185033813321525413, guid: 9b41e89346a4c064a8db183e71025e65,
-        type: 3}
-      propertyPath: m_SpriteSortPoint
-      value: 0
-      objectReference: {fileID: 0}
+    - target: {fileID: 342874874, guid: 9b41e89346a4c064a8db183e71025e65, type: 3}
+      propertyPath: coinAudio
+      value: 
+      objectReference: {fileID: 177129250}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b41e89346a4c064a8db183e71025e65, type: 3}
 --- !u!1001 &6017231677756206904
