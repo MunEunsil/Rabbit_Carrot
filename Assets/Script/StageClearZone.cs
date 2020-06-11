@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StageClearZone : MonoBehaviour
 {
@@ -12,7 +13,8 @@ public class StageClearZone : MonoBehaviour
         {
             DataManager.Instance.stageClear = true;
             DataManager.Instance.playerDie = true;
+            StageManager.Instance.StageNum++;       // 버튼에서 이동할 때 이거랑 이 아래 코드 
         }
-
+        SceneManager.LoadScene(StageManager.Instance.GetCurrentStage()); 
     }
 }

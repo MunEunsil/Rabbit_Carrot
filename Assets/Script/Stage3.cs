@@ -3,21 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Stage2: MonoBehaviour
+public class Stage3 : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
     {
-       // ChangeScene();
+        // ChangeScene();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
-    public void ChangeScene() {
-        StageManager.Instance.StageNum = 2;
-        SceneManager.LoadScene("Stage_2");
+    public void ChangeScene()
+    {
+        StageManager.Instance.StageNum = 3;
+        SceneManager.LoadScene("Stage_3.1");
     }
 }

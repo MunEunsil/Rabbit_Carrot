@@ -19,6 +19,9 @@ public class GameManage : MonoBehaviour
 
     public GameObject LoadMap;
 
+    
+    private GameObject rabbit;
+
 
     //점수 이미지 
     public GameObject[] NumberImage;
@@ -72,6 +75,7 @@ public class GameManage : MonoBehaviour
     void Start()
     {
         minHP = 1 / maxHP;
+        rabbit = GameObject.FindGameObjectWithTag("player");
     }
 
     // Update is called once per frame
@@ -93,7 +97,8 @@ public class GameManage : MonoBehaviour
   
         //플레이어가 살아있는동안 
         if (!DataManager.Instance.playerDie) {
-            DataManager.Instance.Rabbit_animator.SetBool("Rabbit_Run_State",true);
+            rabbit.GetComponent<Animator>().SetBool("Rabbit_Run_State", true);
+            //DataManager.Instance.Rabbit_animator.SetBool("Rabbit_Run_State",true);
 
             //시간 줄이기 
             DataManager.Instance.playerTimeCurrent -= 1 * Time.deltaTime;   
@@ -158,9 +163,9 @@ public class GameManage : MonoBehaviour
         //MapClearZone과 충도하면 MapClear True로 바꾸고 playerDie true로 바꾸기 
 
         if (DataManager.Instance.playerDie == true) {
-     
+
             //게임오버or게임클리어 => 애니메이션 멈춤
-            DataManager.Instance.Rabbit_animator.SetBool("Rabbit_Run_State", false);
+            rabbit.GetComponent<Animator>().SetBool("Rabbit_Run_State", false);
             //endpenel 띄우기
             if (DataManager.Instance.stageClear ==false)
             {
@@ -186,8 +191,9 @@ public class GameManage : MonoBehaviour
 
         SoundManager.Instance.PlaySound("BG");
         
-
-        SceneManager.LoadScene("Stage_2");
+        // STAGE2 부분에 현 스테이지가 들어가야함!
+        SceneManager.LoadScene(
+            StageManager.Instance.GetCurrentStage());
     }
     public void GoMapButton()
     { //맵으로 돌아가는 버튼

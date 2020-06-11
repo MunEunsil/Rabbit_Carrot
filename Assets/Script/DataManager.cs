@@ -21,31 +21,25 @@ public class DataManager : MonoBehaviour
     //내부적으로 맵 번호 설정하기 
     public int map = 0;
     public int mapView = 0;
-    //애니메이션 state   
-    public Animator Rabbit_animator;
 
 
-    static DataManager instance;
+    static DataManager instance = null;
     public static DataManager Instance{
-
-
         get {
-
             return instance;
         }
     }
     //? 
     private void Awake()
     {
-   
         if (instance == null)
         {
-            DontDestroyOnLoad(gameObject);
             instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
-            DontDestroyOnLoad(gameObject);
+            Destroy(gameObject);
         }
     }
 

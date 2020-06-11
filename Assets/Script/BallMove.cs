@@ -13,6 +13,11 @@ public class BallMove : MonoBehaviour
     public GameObject coinAudio;
     //  public GameObject jumpAudio;
 
+    Animator animator;
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
 
 
     void Update()
@@ -61,17 +66,5 @@ public class BallMove : MonoBehaviour
     }
     
     
-    //당근효과음을 위한것 
-/* 
-private void OnTriggerEnter2D(Collider2D collision)
-    {
-        print(collision.gameObject.tag);
-        if (collision.gameObject.tag.CompareTo("Carrot") == 0)
-        {
-            coinAudio.GetComponent<AudioSource>().Play();
 
-
-        }
-    }
-   */ 
 }
