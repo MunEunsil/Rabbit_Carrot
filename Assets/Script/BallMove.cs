@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class BallMove : MonoBehaviour
 {
-    public float jump = 10f; //첫번째 점프 값 
-    public float jump2 = 12f; //두번째 점프 값 
+    public float jump = 5f; //첫번째 점프 값 
+    public float jump2 = 10f; //두번째 점프 값 
     public float Speed = 5f; //플레이어 달리기 속도 
 
     int jumpCount = 0;

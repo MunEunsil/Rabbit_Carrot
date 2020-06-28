@@ -7030,6 +7030,18 @@ MonoBehaviour:
   - {fileID: 1866417468}
   - {fileID: 1944929204}
   LoadMap: {fileID: 1035071397}
+  NumberImage:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  Number: []
 --- !u!1001 &1672636908
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7803,7 +7815,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1866417469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9700,12 +9712,12 @@ PrefabInstance:
     - target: {fileID: 7082119972967842277, guid: 9b41e89346a4c064a8db183e71025e65,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.4
+      value: -0.59
       objectReference: {fileID: 0}
     - target: {fileID: 7082119972967842277, guid: 9b41e89346a4c064a8db183e71025e65,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.4
+      value: -1.62
       objectReference: {fileID: 0}
     - target: {fileID: 7082119972967842277, guid: 9b41e89346a4c064a8db183e71025e65,
         type: 3}

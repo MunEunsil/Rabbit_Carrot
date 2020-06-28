@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Stage2: MonoBehaviour
 {
+    public int stageNum;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +18,7 @@ public class Stage2: MonoBehaviour
         
     }
     public void ChangeScene() {
-        StageManager.Instance.StageNum = 2;
-        SceneManager.LoadScene("Stage_2");
+        StageManager.Instance.StageNum = stageNum;
+        SceneManager.LoadScene(StageManager.sceneNameArray[stageNum]);
     }
 }
