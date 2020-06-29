@@ -16,16 +16,19 @@ public class GameManage : MonoBehaviour
     public GameObject RedPanel;
     //맵 배열로 보관 
     public GameObject[] NextMap;
-
     public GameObject LoadMap;
 
     
     private GameObject rabbit;
 
+    public GameObject gomapbutton;
+    public GameObject gamecontinue;
 
     //점수 이미지 
     public GameObject[] NumberImage;
     public Sprite[] Number;
+    public GameObject[] EndPanelNumberImg;
+    public int NextStageNum;
 
     public void Load_Map() {
         LoadMap.transform.position = new Vector3(15f, LoadMap.transform.position.y, LoadMap.transform.position.z);
@@ -76,6 +79,9 @@ public class GameManage : MonoBehaviour
     {
         minHP = 1 / maxHP;
         rabbit = GameObject.FindGameObjectWithTag("player");
+        //  gomapbutton = GameObject.FindGameObjectWithTag("GoMapButton");
+        //  gamecontinue = GameObject.FindGameObjectWithTag("GameContinueButton");
+
     }
 
     // Update is called once per frame
@@ -164,17 +170,27 @@ public class GameManage : MonoBehaviour
 
         if (DataManager.Instance.playerDie == true) {
 
+         
             //게임오버or게임클리어 => 애니메이션 멈춤
             rabbit.GetComponent<Animator>().SetBool("Rabbit_Run_State", false);
+
+            //점수표시하기
+            EndPanelNumberImg[0].GetComponent<Image>().sprite = Number[temp];
+            EndPanelNumberImg[1].GetComponent<Image>().sprite = Number[temp2];
+            EndPanelNumberImg[2].GetComponent<Image>().sprite = Number[temp3];
+
             //endpenel 띄우기
             if (DataManager.Instance.stageClear ==false)
             {
+                gomapbutton.SetActive(true); // 맵으로 돌아가기 버튼 true
                 EndPanel.SetActive(true);
 
+
             }
-            else if(DataManager.Instance.stageClear == true) //cle ar panel 띄우기 
+            else if(DataManager.Instance.stageClear == true) //위와 다른건 버튼 뿐 
             {
-                stageClear.SetActive(true);
+                gamecontinue.SetActive(true);
+                EndPanel.SetActive(true);
             }
             
         }
@@ -198,5 +214,10 @@ public class GameManage : MonoBehaviour
     public void GoMapButton()
     { //맵으로 돌아가는 버튼
         SceneManager.LoadScene("InGame");
+    }
+    
+    public void GameCountinue()
+    {
+        SceneManager.LoadScene(NextStageNum);
     }
 }
