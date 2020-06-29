@@ -73,15 +73,13 @@ public class GameManage : MonoBehaviour
         }
     }
 
-
-
     void Start()
     {
         minHP = 1 / maxHP;
         rabbit = GameObject.FindGameObjectWithTag("player");
         //  gomapbutton = GameObject.FindGameObjectWithTag("GoMapButton");
         //  gamecontinue = GameObject.FindGameObjectWithTag("GameContinueButton");
-
+        Time.timeScale = 1;
     }
 
     // Update is called once per frame
