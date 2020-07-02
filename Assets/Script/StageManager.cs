@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class StageManager : MonoBehaviour
 {
-    public static string[] sceneNameArray = { "", "Stage_1", "Stage_2", "Stage_3" };
+    public static string[] sceneNameArray = { "", "Stage_1", "Stage_2", "Stage_3","Stage_4"};
 
     private static StageManager _instance = null;
 
