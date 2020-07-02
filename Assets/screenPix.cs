@@ -4,31 +4,24 @@ using UnityEngine;
 
 public class screenPix : MonoBehaviour
 {
-   private void setupCamera()
+    void Start()
     {
-        //가로화면 비율 
-        float targetWidthAspect = 16.0f;
-        //세로화면 비율 
-        float targetHeightAspect = 9.0f;
-
-        Camera mainCamera = Camera.main;
-
-        mainCamera.aspect = targetWidthAspect / targetHeightAspect;
-
-        float widthRatio = (float)Screen.width / targetWidthAspect;
-        float heightRatio = (float)Screen.height / targetHeightAspect;
-
-        //16:9보다 가로가 짧다면 4:3
-
-        //if (heightRatio > widthRatio)
-       //     widthRatio = 0.0f;
-       // else
-       //     heightRatio = 0.0f;
-
-      //  mainCamera.rect = new Rect(
-       //     mainCamera.rect.x+Mathf.Abs(widthadd),
-      //      );
-
-           
+        Camera camera = GetComponent<Camera>();
+        Rect rect = camera.rect;
+        float scaleheight = ((float)Screen.width / Screen.height) / ((float)16 / 9); // (가로 / 세로)
+        float scalewidth = 1f / scaleheight;
+        if (scaleheight < 1)
+        {
+            rect.height = scaleheight;
+            rect.y = (1f - scaleheight) / 2f;
+        }
+        else
+        {
+            rect.width = scalewidth;
+            rect.x = (1f - scalewidth) / 2f;
+        }
+        camera.rect = rect;
     }
+
+    void OnPreCull() => GL.Clear(true, true, Color.black);
 }

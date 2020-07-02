@@ -20,7 +20,8 @@ public class GameManage : MonoBehaviour
 
     
     private GameObject rabbit;
-
+    public GameObject scoreStar1, scoreStar2, scoreStar3;
+    
     public GameObject gomapbutton;
     public GameObject gamecontinue;
 
@@ -77,6 +78,7 @@ public class GameManage : MonoBehaviour
     {
         minHP = 1 / maxHP;
         rabbit = GameObject.FindGameObjectWithTag("player");
+
         //  gomapbutton = GameObject.FindGameObjectWithTag("GoMapButton");
         //  gamecontinue = GameObject.FindGameObjectWithTag("GameContinueButton");
         Time.timeScale = 1;
@@ -168,7 +170,6 @@ public class GameManage : MonoBehaviour
 
         if (DataManager.Instance.playerDie == true) {
 
-         
             //게임오버or게임클리어 => 애니메이션 멈춤
             rabbit.GetComponent<Animator>().SetBool("Rabbit_Run_State", false);
 
@@ -177,11 +178,31 @@ public class GameManage : MonoBehaviour
             EndPanelNumberImg[1].GetComponent<Image>().sprite = Number[temp2];
             EndPanelNumberImg[2].GetComponent<Image>().sprite = Number[temp3];
 
+            scoreStar1.SetActive(false);
+            scoreStar2.SetActive(false);
+            scoreStar3.SetActive(false);
+
             //endpenel 띄우기
             if (DataManager.Instance.stageClear ==false)
             {
                 gomapbutton.SetActive(true); // 맵으로 돌아가기 버튼 true
                 EndPanel.SetActive(true);
+
+                if (DataManager.Instance.score >= 79)
+                {
+                    scoreStar1.SetActive(true);
+                    scoreStar2.SetActive(true);
+                    scoreStar3.SetActive(true);
+                }
+                else if (DataManager.Instance.score > 20)
+                {
+                    scoreStar1.SetActive(true);
+                    scoreStar2.SetActive(true);
+                }
+                else if (DataManager.Instance.score <= 20)
+                {
+                    scoreStar1.SetActive(true);
+                }
 
 
             }
@@ -189,6 +210,22 @@ public class GameManage : MonoBehaviour
             {
                 gamecontinue.SetActive(true);
                 EndPanel.SetActive(true);
+
+                if (DataManager.Instance.score >79)
+                {
+                    scoreStar1.SetActive(true);
+                    scoreStar2.SetActive(true);
+                    scoreStar3.SetActive(true);
+                }
+                else if ( DataManager.Instance.score > 20 )
+                {
+                    scoreStar1.SetActive(true);
+                    scoreStar2.SetActive(true);
+                }
+                else if (DataManager.Instance.score <= 20)
+                {
+                    scoreStar1.SetActive(true);
+                }
             }
             
         }
@@ -211,6 +248,7 @@ public class GameManage : MonoBehaviour
     }
     public void GoMapButton()
     { //맵으로 돌아가는 버튼
+
         SceneManager.LoadScene("InGame");
     }
     
@@ -218,4 +256,5 @@ public class GameManage : MonoBehaviour
     {
         SceneManager.LoadScene(NextStageNum);
     }
+
 }
