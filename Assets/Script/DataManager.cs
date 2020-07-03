@@ -18,6 +18,9 @@ public class DataManager : MonoBehaviour
     //아이템 효과를 위한 bool
     public bool EatBadHeart = false;
 
+    //하트어택 하트 
+    public int HeartNum=0;
+
     //내부적으로 맵 번호 설정하기 
     public int map = 0;
     public int mapView = 0;

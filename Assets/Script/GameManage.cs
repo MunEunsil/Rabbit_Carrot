@@ -169,7 +169,7 @@ public class GameManage : MonoBehaviour
         //MapClearZone과 충도하면 MapClear True로 바꾸고 playerDie true로 바꾸기 
 
         if (DataManager.Instance.playerDie == true) {
-
+            Debug.Log("플레이어 죽음");
             //게임오버or게임클리어 => 애니메이션 멈춤
             rabbit.GetComponent<Animator>().SetBool("Rabbit_Run_State", false);
 
