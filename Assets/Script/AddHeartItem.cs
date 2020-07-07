@@ -11,6 +11,7 @@ public class AddHeartItem : MonoBehaviour
         if (!DataManager.Instance.playerDie) {
 
             if (collision.gameObject.tag.CompareTo("player") == 0) {
+                Debug.Log("하트 닿았어?");
                 //시간추가 
                 DataManager.Instance.playerTimeCurrent += 3f;
                 //시간이 max 보다 커지면 max로 변환 

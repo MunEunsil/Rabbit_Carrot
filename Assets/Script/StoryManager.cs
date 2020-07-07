@@ -13,7 +13,7 @@ public class StoryManager : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if (num == 8) 
+            if (num == 9) 
             {
                 SceneManager.LoadScene("InGame");
             }

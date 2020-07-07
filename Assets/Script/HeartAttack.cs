@@ -28,11 +28,13 @@ public class HeartAttack : MonoBehaviour
         
                 if (DataManager.Instance.HeartNum == 7)
                 {
-                    //심장박동 소리 켜기
+                    HeartAttackSound.instance.PlaySound();
+                    Debug.Log("하트비트");
                 }
                 else if (DataManager.Instance.HeartNum == 10)
                 { //10개 이상 먹으면 gameOver
                     DataManager.Instance.playerDie = true;
+                    Debug.Log("10개 먹음!");
                 }
 
                 //닿으면 이미지 끄기 

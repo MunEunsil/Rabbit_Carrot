@@ -20,6 +20,7 @@ public class DataManager : MonoBehaviour
 
     //하트어택 하트 
     public int HeartNum=0;
+    public int BadCarrotCount = 0;
 
     //내부적으로 맵 번호 설정하기 
     public int map = 0;

@@ -9,7 +9,8 @@ public class Carrot : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         print(collision.gameObject.tag);
-        if (collision.gameObject.tag.CompareTo("player") == 0) {
+        if (collision.gameObject.tag.CompareTo("player") == 0 || collision.gameObject.tag.CompareTo("BadCarrotPlayer") == 0)
+        {
             DataManager.Instance.score += 1;
             //coinAudio.GetComponent<AudioSource>().Play();
             SoundManager.Instance.PlaySound("EatCarrot");

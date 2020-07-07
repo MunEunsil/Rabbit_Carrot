@@ -9,7 +9,7 @@ public class StageClearZone : MonoBehaviour
     {
         print("BadCarrot");
 
-        if (collision.gameObject.tag.CompareTo("player") == 0)
+        if (collision.gameObject.tag.CompareTo("player") == 0 || collision.gameObject.tag.CompareTo("BadCarrotPlayer") == 0)
         {
             DataManager.Instance.stageClear = true;
             DataManager.Instance.playerDie = true;

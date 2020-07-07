@@ -9,7 +9,7 @@ public class DeadZone : MonoBehaviour
     {
         if (!DataManager.Instance.playerDie) { //player가 true 
 
-            if (collision.gameObject.tag.CompareTo("player") == 0) {
+            if (collision.gameObject.tag.CompareTo("player") == 0 || collision.gameObject.tag.CompareTo("BadCarrotPlayer") == 0) {
                 SoundManager.Instance.StopSound("BG");
                 DataManager.Instance.playerDie = true;  //player랑 충돌하면 playerDie를 true
                 print("player death");

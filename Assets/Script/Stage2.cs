@@ -19,6 +19,6 @@ public class Stage2: MonoBehaviour
     }
     public void ChangeScene() {
         StageManager.Instance.StageNum = stageNum;
-        SceneManager.LoadScene(StageManager.sceneNameArray[stageNum]);
+        SceneManager.LoadScene(StageManager.sceneStoryNameArry[stageNum]);
     }
 }

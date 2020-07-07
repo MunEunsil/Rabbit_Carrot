@@ -14,11 +14,11 @@ public class GameManage : MonoBehaviour
     public GameObject EndPanel;
     public GameObject stageClear;
     public GameObject RedPanel;
+
     //맵 배열로 보관 
     public GameObject[] NextMap;
     public GameObject LoadMap;
 
-    
     private GameObject rabbit;
     public GameObject scoreStar1, scoreStar2, scoreStar3;
     
@@ -30,12 +30,12 @@ public class GameManage : MonoBehaviour
     public Sprite[] Number;
     public GameObject[] EndPanelNumberImg;
     public int NextStageNum;
-
+    
     public void Load_Map() {
         LoadMap.transform.position = new Vector3(15f, LoadMap.transform.position.y, LoadMap.transform.position.z);
         LoadMap.SetActive(true);
     }
-
+ 
     //맵을 한 단계 올리고 선택하는 함수 
     public void Next_Map() {
         //맵을 올리고 
@@ -78,7 +78,7 @@ public class GameManage : MonoBehaviour
     {
         minHP = 1 / maxHP;
         rabbit = GameObject.FindGameObjectWithTag("player");
-
+        HeartBar.GetComponent<Image>().color = new Color(225, 225, 225, 225);
         //  gomapbutton = GameObject.FindGameObjectWithTag("GoMapButton");
         //  gamecontinue = GameObject.FindGameObjectWithTag("GameContinueButton");
         Time.timeScale = 1;
@@ -132,6 +132,14 @@ public class GameManage : MonoBehaviour
 
 
         }
+        //뒤로가기 누르면 꺼짐!
+       // if (Input.GetKeyDown(KeyCode.Escape))
+      //  {
+       //     Application.Quit();
+       // }
+
+
+ 
         //코루틴~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
         IEnumerator BadHeartEffect()
@@ -169,10 +177,14 @@ public class GameManage : MonoBehaviour
         //MapClearZone과 충도하면 MapClear True로 바꾸고 playerDie true로 바꾸기 
 
         if (DataManager.Instance.playerDie == true) {
+
+            SoundManager.Instance.StopSound("BG"); //브금끄기
             Debug.Log("플레이어 죽음");
+            HeartBar.GetComponent<Image>().color = new Color(225,225,225,0);
+
             //게임오버or게임클리어 => 애니메이션 멈춤
             rabbit.GetComponent<Animator>().SetBool("Rabbit_Run_State", false);
-
+            
             //점수표시하기
             EndPanelNumberImg[0].GetComponent<Image>().sprite = Number[temp];
             EndPanelNumberImg[1].GetComponent<Image>().sprite = Number[temp2];
@@ -227,10 +239,13 @@ public class GameManage : MonoBehaviour
                     scoreStar1.SetActive(true);
                 }
             }
-            
+
         }
 
+
     }
+
+
     public void RestartButton() { //다시시작 버튼 
         DataManager.Instance.score = 0;
         DataManager.Instance.map = 0;

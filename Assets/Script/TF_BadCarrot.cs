@@ -12,7 +12,7 @@ public class TF_BadCarrot : MonoBehaviour
         if (DataManager.Instance.playerDie == false)
         {
 
-            if (collision.gameObject.tag.CompareTo("player") == 0)
+            if (collision.gameObject.tag.CompareTo("player") == 0 || collision.gameObject.tag.CompareTo("BadCarrotPlayer") == 0)
             {
 
                 TFBadCarrot.gameObject.SetActive(false);     //TF BadCarrot 끄고 
