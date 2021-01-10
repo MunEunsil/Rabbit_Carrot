@@ -7,14 +7,14 @@ public class StageClearZone : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        print("BadCarrot");
+        print("stage Clear");
 
         if (collision.gameObject.tag.CompareTo("player") == 0 || collision.gameObject.tag.CompareTo("BadCarrotPlayer") == 0)
         {
             DataManager.Instance.stageClear = true;
             DataManager.Instance.playerDie = true;
-            StageManager.Instance.StageNum++;       // 버튼에서 이동할 때 이거랑 이 아래 코드 
+            // 버튼에서 이동할 때 이거랑 이 아래 코드 
         }
-        SceneManager.LoadScene(StageManager.Instance.GetCurrentStage()); 
+        //SceneManager.LoadScene(StageManager.Instance.GetCurrentStage()); 
     }
 }

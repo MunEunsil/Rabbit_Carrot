@@ -7,10 +7,9 @@ using UnityEngine.SceneManagement;
 public class GameManage : MonoBehaviour
 {
     public Image HeartBar;
-
     public float maxHP =100f;
     public float minHP = 0f;
-
+    
     public GameObject EndPanel;
     public GameObject stageClear;
     public GameObject RedPanel;
@@ -82,6 +81,16 @@ public class GameManage : MonoBehaviour
         //  gomapbutton = GameObject.FindGameObjectWithTag("GoMapButton");
         //  gamecontinue = GameObject.FindGameObjectWithTag("GameContinueButton");
         Time.timeScale = 1;
+        DataManager.Instance.score = 0;
+        DataManager.Instance.map = 0;
+        DataManager.Instance.mapView = 0;
+        DataManager.Instance.playerDie = false;
+        DataManager.Instance.playerTimeCurrent = DataManager.Instance.playImeMax;
+
+        //DataManager.Instance.Rabbit_animator = GetComponent<Animator>();
+
+        SoundManager.Instance.PlaySound("BG");
+
     }
 
     // Update is called once per frame
@@ -129,6 +138,7 @@ public class GameManage : MonoBehaviour
                 DataManager.Instance.EatBadHeart = false;
                 StartCoroutine(BadHeartEffect());
             }
+  
 
 
         }
@@ -220,6 +230,9 @@ public class GameManage : MonoBehaviour
             }
             else if(DataManager.Instance.stageClear == true) //위와 다른건 버튼 뿐 
             {
+                StageManager.sceneClearInfo[NextStageNum] = 1;
+                //스테이지 클리어 하면 다음 스테이지 1로 변경
+
                 gamecontinue.SetActive(true);
                 EndPanel.SetActive(true);
 
@@ -256,10 +269,11 @@ public class GameManage : MonoBehaviour
         //DataManager.Instance.Rabbit_animator = GetComponent<Animator>();
 
         SoundManager.Instance.PlaySound("BG");
-        
+
         // STAGE2 부분에 현 스테이지가 들어가야함!
         SceneManager.LoadScene(
-            StageManager.Instance.GetCurrentStage());
+           StageManager.sceneNameArray[NextStageNum - 1]);
+    
     }
     public void GoMapButton()
     { //맵으로 돌아가는 버튼
@@ -269,7 +283,7 @@ public class GameManage : MonoBehaviour
     
     public void GameCountinue()
     {
-        SceneManager.LoadScene(NextStageNum);
+        SceneManager.LoadScene(StageManager.sceneStoryNameArry[NextStageNum]);
     }
 
 }

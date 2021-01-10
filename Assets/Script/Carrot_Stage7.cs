@@ -19,7 +19,7 @@ public class Carrot_Stage7 : MonoBehaviour
             // 뭔가 또로롱 하는 효과음이 있으면 어떨까? 
             Debug.Log(rabbit.transform.localScale);
         }
-        else if (carrot_score > 26)
+        else if (carrot_score ==26)
         {
             rabbit.GetComponent<Animator>().SetBool("Rabbit_Run_State", false);
             rabbit.transform.localScale = new Vector3(0.3f, 0.3f, 1f);

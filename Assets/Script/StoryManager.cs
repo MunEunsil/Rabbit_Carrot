@@ -9,6 +9,7 @@ public class StoryManager : MonoBehaviour
     public GameObject[] NextTextBox;
     int num = 0;
 
+
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -21,6 +22,8 @@ public class StoryManager : MonoBehaviour
             {
                 NextStory[num].SetActive(false);
                 num += 1;
+                NextStory[num].SetActive(true);
+                
             }
 
         }

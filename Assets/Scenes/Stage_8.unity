@@ -239,7 +239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d86c90e94c364a4da5c66967174af3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pausePanel: {fileID: 0}
+  pausePanel: {fileID: 3981767568200976228}
 --- !u!4 &43840344
 Transform:
   m_ObjectHideFlags: 0
@@ -11915,7 +11915,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1659907809}
-        m_MethodName: GameCountinue
+        m_MethodName: GoMapButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11944,7 +11944,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 303d85e57fc2a1e4f82d2047392425e6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2e622b1c56ee73d4c8c5e407fc2bae45, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -15737,6 +15737,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5f6128123167ef419b30aef4d6b2789, type: 3}
+--- !u!1 &3981767568200976228 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8604927303104670676, guid: d5f6128123167ef419b30aef4d6b2789,
+    type: 3}
+  m_PrefabInstance: {fileID: 3981767568200976227}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &5900216934763544713 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7395997504083920874, guid: d5f6128123167ef419b30aef4d6b2789,

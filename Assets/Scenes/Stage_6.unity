@@ -2427,7 +2427,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: df8401be11a4a0d4687b04de5e986e3f, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -13398,7 +13398,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1659907809}
-        m_MethodName: GameCountinue
+        m_MethodName: GoMapButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13427,7 +13427,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 303d85e57fc2a1e4f82d2047392425e6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2e622b1c56ee73d4c8c5e407fc2bae45, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

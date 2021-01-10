@@ -22,6 +22,12 @@ public class screenPix : MonoBehaviour
         }
         camera.rect = rect;
     }
-
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+    }
     void OnPreCull() => GL.Clear(true, true, Color.black);
 }
